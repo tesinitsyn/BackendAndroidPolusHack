@@ -6,13 +6,13 @@ import javax.persistence.*;
 @Table(name = "drivers")
 public class DriverEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
     private Long id;
     @Column(name = "nsm")
     private String nsm;
     @Column(name = "vehicle_type")
-    private String VehicleType;
+    private String vehicleType;
     @Column(name = "taskid")
     private int taskId;
     @Column(name = "login")
@@ -20,7 +20,17 @@ public class DriverEntity {
     @Column(name = "password")
     private String password;
 
+    public DriverEntity(Long id, String nsm, String vehicleType, int taskId, String login, String password) {
+        this.id = id;
+        this.nsm = nsm;
+        this.vehicleType = vehicleType;
+        this.taskId = taskId;
+        this.login = login;
+        this.password = password;
+    }
+
     public DriverEntity() {
+
     }
 
     public Long getId() {
@@ -40,11 +50,11 @@ public class DriverEntity {
     }
 
     public String getVehicleType() {
-        return VehicleType;
+        return vehicleType;
     }
 
     public void setVehicleType(String vehicleType) {
-        VehicleType = vehicleType;
+        this.vehicleType = vehicleType;
     }
 
     public int getTaskId() {
