@@ -19,14 +19,17 @@ public class DriverEntity {
     private String login;
     @Column(name = "password")
     private String password;
+    @Column(name = "specialization")
+    private Integer specialization;
 
-    public DriverEntity(Long id, String nsm, String vehicleType, int taskId, String login, String password) {
+    public DriverEntity(Long id, String nsm, String vehicleType, int taskId, String login, String password, Integer specialization) {
         this.id = id;
         this.nsm = nsm;
         this.vehicleType = vehicleType;
         this.taskId = taskId;
         this.login = login;
         this.password = password;
+        this.specialization = specialization;
     }
 
     public DriverEntity() {
@@ -79,5 +82,13 @@ public class DriverEntity {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public Integer getSpecialization() {
+        return specialization;
+    }
+
+    public void setSpecialization(Integer specialization) {
+        this.specialization = specialization;
     }
 }
