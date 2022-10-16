@@ -10,11 +10,13 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
 
+@CrossOrigin
 @RestController
 public class Controller {
 
     private final DriverService driverService;
     private final OrderService orderService;
+
 
     public Controller(DriverService driverService, OrderService orderService) {
         this.driverService = driverService;
