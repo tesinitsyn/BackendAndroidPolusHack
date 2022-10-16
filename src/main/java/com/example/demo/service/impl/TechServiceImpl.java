@@ -31,12 +31,12 @@ public class TechServiceImpl implements TechService {
     }
 
     @Override
-    public TechEntity updateDriver(TechEntity techEntity) {
+    public TechEntity updateTech(TechEntity techEntity) {
         return techRepository.save(techEntity);
     }
 
     @Override
-    public void deleteDriver(Long techId) {
+    public void deleteTech(Long techId) {
         techRepository.deleteById(techId);
     }
 }
