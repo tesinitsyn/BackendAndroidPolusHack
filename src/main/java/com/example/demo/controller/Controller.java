@@ -2,19 +2,29 @@ package com.example.demo.controller;
 
 import com.example.demo.entity.DriverEntity;
 import com.example.demo.service.DriverService;
-import org.springframework.stereotype.Component;
+import com.example.demo.service.OrderService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
-@Component
+
 @RestController
+@RequestMapping("/api")
+public class Controller {
 
-public class DriverController {
     private final DriverService driverService;
+    private final OrderService orderService;
 
-    public DriverController(DriverService driverService) {
+    public Controller(DriverService driverService, OrderService orderService) {
         this.driverService = driverService;
+        this.orderService = orderService;
+
+    }
+
+
+    @RequestMapping("/driver")
+    public void createDriverController() {
+
     }
     @GetMapping
     public List<DriverEntity> findAllDrivers(){
